@@ -28,7 +28,7 @@ app.use(async (req, res, next) =>{
     }else {
         res.locals.user = null
     }
-    next()// moce on to the next middleware
+    next()// move on to the next middleware
 })
 
 // CONTROLLERS
