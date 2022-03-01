@@ -1,0 +1,2 @@
+sequelize model:create --name image -- attributes date:string,url:text,userId:integer
+sequelize model:create --name comment --attributes comment:text,imageId:integer,userId:integer
