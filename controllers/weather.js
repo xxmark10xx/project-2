@@ -5,16 +5,17 @@ require('dotenv').config()
 const axios = require('axios')
 
 
-const apod = async () => {
-    const url = (`https://api.nasa.gov/planetary/apod?api_key=${process.env.api_key}`)
+// FETCHING INSIGHT API
+const insight = async () => {
+    const url = (`https: //api.nasa.gov/insight_weather/?api_key=${process.env.api_key}`)
     try{
         const response = await axios.get(url)
         console.log(response)
-    }catch (err){
+    }catch(err) {
         console.log(err)
     }
 }
+insight()
 
-apod()
 
 module.exports = router
