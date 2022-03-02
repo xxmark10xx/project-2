@@ -5,7 +5,21 @@ require('dotenv').config()
 const cookieParser = require('cookie-parser')
 const cryptoJS = require('crypto-js')
 const db = require('./models/index.js')
+const axios = require('axios')
 
+//FETCHING APIS
+
+
+const insight = async () => {
+    const url = (`https: //api.nasa.gov/insight_weather/?api_key=${process.env.api_key}`)
+    try{
+        const response = await axios.get(url)
+        console.log(response)
+    }catch(err) {
+        console.log(err)
+    }
+}
+// insight()
 
 
 // MIDDLEWARE
@@ -34,6 +48,7 @@ app.use(async (req, res, next) =>{
 // CONTROLLERS
 app.use('/users',require('./controllers/users.js'))
 app.use('/user', require('./controllers/images.js'))
+app.use('/user', require('./controllers/comments.js'))
 
 // ROUTES
 app.get('/', (req, res) => {

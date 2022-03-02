@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/login', (req, res) =>{
-    res.render('users/login.ejs')
+    res.render('users/login.ejs', {error: null})
 })
 
 router.post('/login', async (req, res) =>{
@@ -59,6 +59,10 @@ router.post('/login', async (req, res) =>{
         // redirect back to homepage
         res.redirect('/')
     }
+})
+
+router.get('/comment/:id', (req, res) => {
+
 })
 
 router.get('/logout', (req, res) =>{
