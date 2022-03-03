@@ -10,12 +10,13 @@ const insight = async () => {
     const url = (`https: //api.nasa.gov/insight_weather/?api_key=${process.env.api_key}`)
     try{
         const response = await axios.get(url)
-        console.log(response)
+        // console.log(response)`
     }catch(err) {
         console.log(err)
     }
 }
-insight()
+
+// insight()
 
 
 module.exports = router

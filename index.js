@@ -7,19 +7,6 @@ const cryptoJS = require('crypto-js')
 const db = require('./models/index.js')
 const axios = require('axios')
 
-//FETCHING APIS
-
-
-const insight = async () => {
-    const url = (`https: //api.nasa.gov/insight_weather/?api_key=${process.env.api_key}`)
-    try{
-        const response = await axios.get(url)
-        console.log(response)
-    }catch(err) {
-        console.log(err)
-    }
-}
-// insight()
 
 
 // MIDDLEWARE

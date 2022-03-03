@@ -61,8 +61,8 @@ router.post('/login', async (req, res) =>{
     }
 })
 
-router.get('/comment/:id', (req, res) => {
-
+router.get('/weather', (req, res) => {
+    res.render('users/weather.ejs')
 })
 
 router.get('/logout', (req, res) =>{
