@@ -1,4 +1,13 @@
 <h2>Hello <%= user.email %> :) </h2>
 
-<div class="title"><%= apod.title %></div>
+<div class="conatainaer">
+    <h2><%= apodData['title']%></h2>
+    <img src="<%= apodData['url'] %>" >
+    <h3><%=apodData['explanation']%></h3>
+</div>
 
+<form action="/users/profile" method="POST">
+    <label for="date">Pick a Date</label>
+    <input type="date" name="date" id="apodDate">
+    <button type="submit">Look up</button>
+</form>

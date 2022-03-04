@@ -3,10 +3,21 @@ const router = express.Router()
 const db = require('../models')
 const bcrypt = require('bcrypt')
 const cryptojs = require('crypto-js')
+const axios = require('axios')
 require('dotenv').config()
 
-router.get('/profile', (req, res) => {
-    res.render('users/profile.ejs')
+router.get('/profile', async (req, res) => {
+        const url = (`https://api.nasa.gov/planetary/apod?api_key=${process.env.api_key}`)
+        try{
+            const response = await axios.get(url)
+            const apodData = response.data
+            
+            console.log(apodData['title'])
+            res.render('users/profile.ejs', {apodData})
+           
+        }catch (err){
+            console.log(err)
+        }
 })
 
 
@@ -61,8 +72,18 @@ router.post('/login', async (req, res) =>{
     }
 })
 
-router.get('/weather', (req, res) => {
-    res.render('users/weather.ejs')
+router.get('/mars', async (req, res) => {
+   
+    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=${process.env.api_key}`
+    try{
+        const response = await axios.get(url)
+        const roverData = response.data
+
+        console.log(roverData.photos.camera)
+        res.render('users/mars.ejs', {roverData})
+    }catch(err) {
+        console.log(err)
+    }
 })
 
 router.get('/logout', (req, res) =>{
