@@ -86,6 +86,21 @@ router.get('/mars', async (req, res) => {
     }
 })
 
+router.get('/comments', (req, res) => {
+    res.render('users/comments.ejs')
+})
+
+router.put('/comments/:id', (req, res) => {
+    res.send()
+})
+
+router.delete('/comments/:id', async (req, res) => {
+    const findComment = await db.findOne({
+        
+    })
+})
+
+
 router.get('/logout', (req, res) =>{
     console.log('logging out')
     res.clearCookie('userId')
