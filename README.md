@@ -43,6 +43,13 @@ We are going to be using npm packages such as express, ejs, ejs layouts, cookie-
 .
 >>>>>>> deploy
 
+## MVP's
+* have a function site:
+* login
+* logout 
+* CRUD  functions
+* API used
+
 ## Post-Project
 * be able to incorperate more apis and pages that the user can use.
 * be able to leave messages about a specific picture.
