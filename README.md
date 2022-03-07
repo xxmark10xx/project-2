@@ -31,17 +31,13 @@ We are going to be using npm packages such as express, ejs, ejs layouts, cookie-
 |**GET**|`/login`|This route will take the user to the login page.|
 |**POST**|`/login`|This isplays error massage if user is not found in database or password is wrong. If both are correct then it logs in user.
 |**GET**|`/logout`|This route will allow the user to logout of there profile.|
-<<<<<<< HEAD
 |**GET**|`/comment`|This is to show all the comments that a specific user made.|
 |**DELETE**|`/comment/:id`|This route will allow the user to delete a comment.|
 |**PUT**|`/comment/:id`|This route will allow the user to edit a comment.|
-
-=======
 |**GET**|`/comment`|This allow the comments of the specific user to be shown.|
 |**DELETE**|`/comment/:id`|This route will allow the user to delete a comment.|
 |**PUT**|`/comment/:id`|This route will allow the user to edit a comment.|
-.
->>>>>>> deploy
+
 
 ## MVP's
 * have a function site:
@@ -53,21 +49,11 @@ We are going to be using npm packages such as express, ejs, ejs layouts, cookie-
 ## Post-Project
 * be able to incorperate more apis and pages that the user can use.
 * be able to leave messages about a specific picture.
-<<<<<<< HEAD
 * be able to style better.
-* Get the edit route to work (I can hard code a change in the database but req.body.comment wasn't allowing me to change the comment on the site.)
+
 ## Sources
 * api.nasa.gov
-=======
-* be able to have a function edit since I can't allow user to edit database.
-* style the website better.
-## Sources
-api.nasa.gov
-Paulina Le - Office Hours
->>>>>>> deploy
-
+* Paulina Le - Office Hours
 * paulina - office hours
-
 * makeuseof.com
-
 * stackoverflow.com*
