@@ -1,17 +1,14 @@
 @import 'shared/variables.css';
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Noto+Serif+JP&family=Orbitron&family=Shizuru&family=Short+Stack&display=swap');
 
-* {
-    font-family: 'Oribitron';
-    font-size: 20px;
-}
 
 h1{
-   display: flex;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 
 body {
+    font-family: 'Oribitron';
+    font-size: 15px;
     background: linear-gradient(to top, var(--color-backgorund-dark), var(--color-background-light));
 }

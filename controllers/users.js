@@ -116,11 +116,14 @@ router.get('/:id/edit', async (req, res) =>{
 // THIS IS TO UPDATE THE COMMENT
 router.put('/comments/:id', async (req, res) => {
     try{
-        await db.comment.update({ comment: req.body.comment }, {
-            where: {
-              id: req.params.id
-            }
-          });
+        const foundComment = await db.comment.findByPk(req.params.id)
+        foundComment.set({ comment: req.body.comment})
+        await foundComment.save()
+        // await db.comment.update({ comment: req.body.comment }, {
+        //     where: {
+        //       id: req.params.id
+        //     }
+        //   });
         // const userComment = await db.comment.findOne({
         //     where: {
         //         id: req.params.id
