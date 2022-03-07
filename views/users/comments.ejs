@@ -1,1 +1,10 @@
-<h2>Comments on Past Pictures</h2>
+<h2><%= user.email%> Comments</h2>
+
+<% userComments.forEach(comment => { %>
+<ul>
+    <p> <%=comment.comment %></p>
+    <a href="/users/<%= comment.id%>/edit">Edit</a>
+    <%- include('../partials/deleteForm', {url: `comments/${comment.id}`}) %>
+</ul>
+ <% }) %>
+

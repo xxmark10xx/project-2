@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 const cryptojs = require('crypto-js')
 const axios = require('axios')
 require('dotenv').config()
+const methodOverride = require('method-override')
 
 router.get('/profile', async (req, res) => {
         const url = (`https://api.nasa.gov/planetary/apod?api_key=${process.env.api_key}`)
@@ -12,7 +13,7 @@ router.get('/profile', async (req, res) => {
             const response = await axios.get(url)
             const apodData = response.data
             
-            console.log(apodData['title'])
+            // console.log(apodData['date'])
             res.render('users/profile.ejs', {apodData})
            
         }catch (err){
@@ -72,32 +73,76 @@ router.post('/login', async (req, res) =>{
     }
 })
 
-router.get('/mars', async (req, res) => {
-   
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=${process.env.api_key}`
-    try{
-        const response = await axios.get(url)
-        const roverData = response.data
 
-        console.log(roverData.photos.camera)
-        res.render('users/mars.ejs', {roverData})
+
+
+// post comment to database
+router.post('/profile', async (req, res) =>{
+    try{
+        await db.comment.create({
+            userId: res.locals.user.id,
+            comment: req.body.comment
+        })
+        res.redirect('/users/comments')
     }catch(err) {
         console.log(err)
     }
 })
 
-router.get('/comments', (req, res) => {
-    res.render('users/comments.ejs')
+// shows all the comments of the user
+router.get('/comments', async (req, res) => {
+    try{
+        const comments = await db.comment.findAll({
+            where: {
+                userId: res.locals.user.id,
+            }
+        })
+        res.render('users/comments.ejs', {userComments: comments })
+    }catch (err) {
+        console.log(err)
+    }
 })
 
-router.put('/comments/:id', (req, res) => {
-    res.send()
+// THIS IS TO EDIT THE COMMENT
+router.get('/:id/edit', async (req, res) =>{
+    try {
+        const comments = await db.comment.findByPk(req.params.id)
+        res.render('users/editComment.ejs', {userComments: comments})
+    }catch (err){
+        console.log(err)
+    }
 })
 
-router.delete('/comments/:id', async (req, res) => {
-    const findComment = await db.findOne({
-        
-    })
+// THIS IS TO UPDATE THE COMMENT
+router.put('/comments/:id', async (req, res) => {
+    try{
+        await db.comment.update({ comment: req.body.comment }, {
+            where: {
+              id: req.params.id
+            }
+          });
+        // const userComment = await db.comment.findOne({
+        //     where: {
+        //         id: req.params.id
+        //     }
+        // })
+        // userComment.comment = req.body.comment
+        // await userComment.update()
+        res.redirect('/users/comments')
+    }catch (err) {
+        console.log(err)
+    }
+})
+
+// THIS IS DELETE THE COMMENT
+router.delete('/comments/:id', async (req, res) =>{
+    try{
+        const userComment = await db.comment.findByPk(req.params.id)
+        await userComment.destroy()
+        res.redirect('/users/comments')
+    }catch (err) {
+        console.log(err)
+    }
 })
 
 

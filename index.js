@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const cryptoJS = require('crypto-js')
 const db = require('./models/index.js')
 const axios = require('axios')
+const methodOverride = require('method-override')
 
 
 
@@ -14,6 +15,7 @@ app.set('view engine', 'ejs') // set the view engine to ejs
 app.use(ejsLayouts)// tell express we want to use layouts
 app.use(cookieParser()) // give us access to req.cookies
 app.use(express.urlencoded({extended: false})) // body parser
+app.use(methodOverride('_method'))
 
 // CUSTOM LOGIN MIDDLEWARE
 app.use(async (req, res, next) =>{
