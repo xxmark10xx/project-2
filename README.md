@@ -56,4 +56,4 @@ We are going to be using npm packages such as express, ejs, ejs layouts, cookie-
 * Paulina Le - Office Hours
 * paulina - office hours
 * makeuseof.com
-* stackoverflow.com*
+* stackoverflow.com
