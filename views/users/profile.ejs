@@ -4,13 +4,6 @@
     <h3><%=apodData['explanation']%></h3>
 </div>
 
-<form action="/users/profile" method="POST">
-    <label for="date">Pick a Date</label>
-    <input type="date" name="date" id="apodDate">
-    <button type="submit">Look up</button>
-
-</form>
-
 <form method="POST" action="/users/profile">
     <label for="comment">Enter your Comment</label>
     <input type="text" id="comment" name="comment">
