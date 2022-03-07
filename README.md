@@ -42,7 +42,10 @@ We are going to be using npm packages such as express, ejs, ejs layouts, cookie-
 * be able to style better.
 * Get the edit route to work (I can hard code a change in the database but req.body.comment wasn't allowing me to change the comment on the site.)
 ## Sources
-api.nasa.gov
-paulina - office hours
-makeuseof.com
-stackoverflow.com
+* api.nasa.gov
+
+* paulina - office hours
+
+* makeuseof.com
+
+* stackoverflow.com*
