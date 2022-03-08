@@ -6,7 +6,10 @@ This app will ask you to sign up or login to your profile. After logging in you 
 ## Install Instructions
 * install the npm add ons `npm install`
 * Now you would need to create a database and migrate it using: `sequelize create:db --name sf-auth -- attributes ` and `sequelize db:migrate`
-## Link to Deploy
+* get an api key from https://api.nasa.gov/
+* once you have an api key you need to make a .env file to store your api key `api_key=<your-api-key>`
+* now you could run nodemon.
+## Link to Deploy 
 https://git.heroku.com/exploring-the-universe.git
 ## User Stories
 * As a user I want to be able to search a date and be able to see the picture of the day on that specific date

@@ -113,7 +113,6 @@ router.get('/:id/edit', async (req, res) =>{
     }
 })
 
-// THIS IS TO UPDATE THE COMMENT
 router.put('/comments/:id', async (req, res) => {
     try{
         const foundComment = await db.comment.findByPk(req.params.id)
