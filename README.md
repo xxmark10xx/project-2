@@ -10,7 +10,7 @@ This app will ask you to sign up or login to your profile. After logging in you 
 * once you have an api key you need to make a .env file to store your api key `api_key=<your-api-key>`
 * now you could run nodemon.
 ## Link to Deploy 
-https://git.heroku.com/exploring-the-universe.git
+https://exploring-the-universe.herokuapp.com/
 ## User Stories
 * As a user I want to be able to search a date and be able to see the picture of the day on that specific date
 * As a user I want to be able to add these dates to a history tab where I could see the dates I have already used and be able to select date and delete them from the history.
