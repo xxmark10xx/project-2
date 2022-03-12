@@ -1,0 +1,11 @@
+<div class="conatainaer">
+    <h2><%= apodData['title']%></h2>
+    <img src="<%= apodData['url'] %>" >
+    <h3><%=apodData['explanation']%></h3>
+</div>
+
+<form method="POST" action="comments/:id/edit">
+    <label for="comment">Enter your Comment</label>
+    <input type="text" id="comment" name="comment">
+    <button type="submit">Save Comment</button>
+</form>

@@ -59,6 +59,10 @@ router.post('/login', async (req, res) =>{
     }
 })
 
+router.get("/proile", (req, res) => {
+    res.render("/users/profile")
+})
+
 
 
 router.get('/logout', (req, res) =>{

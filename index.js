@@ -32,12 +32,14 @@ app.use(async (req, res, next) =>{
     }else {
         res.locals.user = null
     }
+    // console.log(res.locals)
     next()// move on to the next middleware
 })
 
 // CONTROLLERS
 app.use('/users',require('./controllers/users.js'))
-app.use('/user', require('./controllers/comments.js'))
+app.use('/comments', require('./controllers/comments.js'))
+app.use('/images', require('./controllers/images.js'))
 
 // ROUTES
 app.get('/', (req, res) => {

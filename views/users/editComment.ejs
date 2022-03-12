@@ -1,5 +1,5 @@
 <h2>Edit Comment</h2>
-<form action="/users/comments/<%= userComments.id %>?_method=PUT" method="POST">
+<form action="/users/comments/<%= userComments.id %>/edit?_method=PUT" method="POST">
     <%- include('../partials/formFields')%>
     <a href="/users/comments">Cancel</a>
     <button type="submit">Update</button>
