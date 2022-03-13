@@ -1,14 +1,30 @@
 * {
-    background-color: black ;
     font-family: Orbitron;
+    font-size: 20px;
     color: white;
 }
 
+body {
+    background: linear-gradient(to top, black, grey)
+}
+
+.header {
+    background-color: black;
+    display: inline-block;
+}
+
+#navbar {
+    display: inline-block;
+}
+
+
+/* 
 li {
     float: left;
   }
   
  #navbar {
+
     display: inline-block;
     padding: 8px;
     background-color: grey;
@@ -17,5 +33,12 @@ li {
 #layout {
     display: inline;
 }
+
+h2 {
+    display: block;
+    width: 30%;
+
+
+} */
 
 
