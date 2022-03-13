@@ -1,0 +1,21 @@
+* {
+    background-color: black ;
+    font-family: Orbitron;
+    color: white;
+}
+
+li {
+    float: left;
+  }
+  
+ #navbar {
+    display: inline-block;
+    padding: 8px;
+    background-color: grey;
+}
+
+#layout {
+    display: inline;
+}
+
+

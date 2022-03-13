@@ -59,8 +59,24 @@ router.post('/login', async (req, res) =>{
     }
 })
 
-router.get("/proile", (req, res) => {
-    res.render("/users/profile")
+router.get("/profile", async (req, res) => {
+    try{
+        const images = await db.image.findAll({
+            where: {
+                userId: res.locals.user.id
+            }
+        })
+        const comments = await db.comment.findAll({
+            where: {
+                userId: res.locals.user.id
+            }
+        })
+        // res.render("users/profile.ejs", {userImages: images})
+        res.render("users/profile.ejs", {user: res.locals.user, userImages: images, comments: comments})
+    }catch(err) {
+        console.log(err)
+    }
+
 })
 
 

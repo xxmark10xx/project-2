@@ -10,17 +10,17 @@ const methodOverride = require("method-override")
 router.post("/", async (req, res) => {
     try{
         await db.comment.create({
-            userId: res.locals.userId,
+            userId: res.locals.user.id,
             comment: req.body.comment
         })
-        res.redirect("user/comments")
+        res.redirect("/images")
     }catch(err) {
         console.log(err)
     }
 })
 
 // Shows all the comment of the user
-router.get("/", async (res, req) => {
+router.get("/", async (req, res) => {
     console.log(res.locals)
     try {
         const comments = await db.comment.findAll({

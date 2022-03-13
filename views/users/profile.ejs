@@ -1,11 +1,13 @@
-<div class="conatainaer">
-    <h2><%= apodData['title']%></h2>
-    <img src="<%= apodData['url'] %>" >
-    <h3><%=apodData['explanation']%></h3>
-</div>
 
-<form method="POST" action="/users/profile">
-    <label for="comment">Enter your Comment</label>
-    <input type="text" id="comment" name="comment">
-    <button type="submit">Save Comment</button>
-</form>
+<h2><%= user.email%>'s profile</h2>
+<% userImages.forEach(image => { %>
+    <ul>
+        <img src="<%= image.url %>" alt="picture-of-the-day" />
+    </ul>
+<% }) %>
+
+<% comments.forEach(comment => { %>
+    <ul>
+        <p><%= comment.comment %></p>
+    </ul>
+<% }) %>

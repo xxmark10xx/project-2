@@ -26,7 +26,9 @@ app.use(async (req, res, next) =>{
         // converting the decrypted id into a readable string
         const decrpytedIdString = decryptedId.toString(cryptoJS.enc.Utf8)
         // querying the database for the user with that id
-        const user = await db.user.findByPk(decrpytedIdString)
+        const user = await db.user.findByPk(decrpytedIdString, {
+            include: [db.comment, db.image]
+        })
         // assigning the found user to res.local.user in the routes, and in the ejs
         res.locals.user = user
     }else {
@@ -37,7 +39,7 @@ app.use(async (req, res, next) =>{
 })
 
 // CONTROLLERS
-app.use('/users',require('./controllers/users.js'))
+app.use('/users', require('./controllers/users.js'))
 app.use('/comments', require('./controllers/comments.js'))
 app.use('/images', require('./controllers/images.js'))
 

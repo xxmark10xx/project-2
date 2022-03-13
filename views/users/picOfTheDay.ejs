@@ -4,8 +4,14 @@
     <h3><%=apodData['explanation']%></h3>
 </div>
 
-<form method="POST" action="comments/:id/edit">
+<form method="POST" action="/images">
+    <input hidden type="text" name="url" value="<%= apodData['url'] %>"/>
+    <button type="submit">Save Photo</button>
+</form>
+
+<form method="POST" action="/comments">
     <label for="comment">Enter your Comment</label>
     <input type="text" id="comment" name="comment">
     <button type="submit">Save Comment</button>
 </form>
+

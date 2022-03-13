@@ -1,0 +1,11 @@
+<ul>
+      <% if (user) { %>
+        <li><a id="navbar" href="/users/profile">User Profile</a></li>
+        <li><a id="navbar" href="/images">Picture of the Day</a></li>
+        <li><a id="navbar" href="/comments">Saved Comments</a></li>
+        <li><a id="navbar" href="/users/logout">Logout</a></li>
+    <% } else { %>
+        <li><a id="navbar-right" href="/users/new">Sign Up</a></li>
+        <li><a id="navbar-right" href="/users/login">Login</a></li>
+    <% } %>
+</ul>
