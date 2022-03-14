@@ -38,7 +38,7 @@ router.get("/", async (req, res) => {
 router.get("/:id/edit", async (req, res) => {
     try {
         const comments = await db.comment.findByPk(req.params.id)
-        res.render("users/editComment/ejs", {userComments: comments})
+        res.render("users/editComment.ejs", {userComments: comments})
     }catch (err) {
         console.log(err)
     }

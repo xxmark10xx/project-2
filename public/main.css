@@ -5,17 +5,65 @@
 }
 
 body {
-    background: linear-gradient(to top, black, grey)
+    background: url(https://unsplash.com/photos/uhjiu8FjnsQ/download) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
+img {
+    margin: auto;
+    display: block;
+  }
 
 .header {
-    background-color: black;
-    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#navbar {
+    display: inline;
 }
 
-#navbar {
-    display: inline-block;
+li a{
+    float: right;
+    display: block;
+    padding: 8px;
+    background-color: black;
 }
+
+a{
+    border: 2px solid white;
+    background: aqua;
+}
+
+button {
+    background: black;
+}
+
+button:hover {
+    background: aqua;
+    box-shadow:  0 0 80px aqua;
+}
+
+#comment {
+    background-color: black;
+    box-shadow: 0 0 50px aqua;
+}
+
+input {
+    background-color: black;
+    box-shadow: 0 0 50px aqua;
+}
+
+h1{
+    float: left;
+    display: inline; 
+    background-color: black;
+}
+
 
 
 /* 

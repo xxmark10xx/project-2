@@ -3,7 +3,7 @@
 <% userComments.forEach(comment => { %>
 <ul>
     <p> <%=comment.comment %></p>
-    <a href="/users/comments/<%= comment.id%>">Edit</a>
+    <a href="/comments/<%= comment.id%>/edit">Edit</a>
     <%- include('../partials/deleteForm', {url: `comments/${comment.id}`}) %>
 </ul>
  <% }) %>
