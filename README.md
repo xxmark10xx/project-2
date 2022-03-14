@@ -27,19 +27,22 @@ We are going to be using npm packages such as express, ejs, ejs layouts, cookie-
 ## Restful Routes
 | Method | Path | Purpose |
 |:-------|:-----:|--------:|
-|**GET**|`/`| Home page that list all routes as links.|
-|**POST**|`/`|This route checks if the user has already made an account if not hashes a password and ecrypts user, then redirects back to homepage.| 
-|**GET**|`/profile`| Route to profile page of user that is logged in.|
-|**GET**|`/new`| This route will take the user to the sign up page.|
-|**GET**|`/login`|This route will take the user to the login page.|
-|**POST**|`/login`|This isplays error massage if user is not found in database or password is wrong. If both are correct then it logs in user.
-|**GET**|`/logout`|This route will allow the user to logout of there profile.|
-|**GET**|`/comment`|This is to show all the comments that a specific user made.|
-|**DELETE**|`/comment/:id`|This route will allow the user to delete a comment.|
-|**PUT**|`/comment/:id`|This route will allow the user to edit a comment.|
-|**GET**|`/comment`|This allow the comments of the specific user to be shown.|
-|**DELETE**|`/comment/:id`|This route will allow the user to delete a comment.|
-|**PUT**|`/comment/:id`|This route will allow the user to edit a comment.|
+|Comments Controller|
+|**POST**|`/comments`|CREATES a new comment|
+|**PUT**|`/comments/:id`|UPDATES a comment|
+|**GET**|`/comments`|shows all the comments of the user|
+|**GET**|`/comments/:id/edit`|shows form to edit comment|
+|**DELETE**|`/comments/:id`|DELETES a comment|
+|Images Controller|
+|**GET**|`/images`|this is to show the image data from the api|
+|**POST**|`/images`|post the image to the database|
+|Users Controller|
+|**GET**|`/user/profile`|shows all the images the user saved|
+|**GET**|`/user/new`|render the new users/sign-up ejs file|
+|**GET**|`/user/login`|login ejs file|
+|**GET**|`/user/logout`|logs user out|
+|**POST**|`/user`|checks if user is already in the database|
+|**POST**|`/login`|login in user if credentials are correct|
 
 
 ## MVP's

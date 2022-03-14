@@ -34,22 +34,6 @@ router.post("/", async (req, res) => {
     console.log(req.body)
 })
 
-// This is to show the saved images of the user
-// router.get("/", async (req, res) => {
-//     console.log(res.locals)
-//     try{
-//         const images = await db.image.findAll({
-//             where: {
-//                 userId: res.locals.userId
-//             }
-//         })
-//         console.log("these are th images", images )
-//         // res.render("users/profile.ejs", {userImages: images})
-//         res.send("/profile")
-//     }catch(err) {
-//         console.log(err)
-//     }
-// })
 
 
 
